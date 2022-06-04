@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   # we want to see multiple products
   resources :products
+  resources :pages
 
-  root 'products#index'
+  get 'info', to: 'pages#info'
+
+  root 'pages#home'
 end
