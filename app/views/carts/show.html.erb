@@ -1,0 +1,35 @@
+<h2>Cart</h2>
+<% if @current_cart.order_items.any? %>
+  <table style="border: 1px solid black;">
+
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <% @current_cart.order_items.each do |item| %>
+          <tr>
+            <td><%#= image_tag item.product.image_1.thumb.url %></td>
+            <td><%= item.product.title %></td>
+            <td><%= item.product.price %></td>
+            <td><%= item.quantity %></td>
+            <td><%= link_to "Remove item", product_order_item_path(item.product, item), method: :delete, data: { confirm: "Are you sure?" } %></td>
+          </tr>
+        <% end %>
+      <tr>
+        <td>TOTAL VALUE: $10</td>
+      </tr>
+    </tbody>
+
+  </table>
+<% else %>
+  <p class="empty">
+    There are no items in your cart
+  </p>
+<% end %>
