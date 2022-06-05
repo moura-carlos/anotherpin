@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   resources :pages
 
+  # we only want a user to see ONE cart.
+  resource :cart
+
   get 'info', to: 'pages#info'
 
   root 'pages#home'
