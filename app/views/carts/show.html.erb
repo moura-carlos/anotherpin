@@ -1,6 +1,6 @@
 <h2>Cart</h2>
 <% if @current_cart.order_items.any? %>
-  <table style="border: 1px solid black;">
+  <table>
 
     <thead>
       <tr>
@@ -15,10 +15,17 @@
       <tr>
         <% @current_cart.order_items.each do |item| %>
           <tr>
-            <td><%#= image_tag item.product.image_1.thumb.url %></td>
-            <td><%= item.product.title %></td>
+            <td>
+              <%= image_tag item.product.image_1.thumb.url, width: "50" %>
+              <%= item.product.title %>
+            </td>
             <td><%= item.product.price %></td>
-            <td><%= item.quantity %></td>
+            <td>
+              <%= simple_form_for [item.product, item] do |f| %>
+                <%= f.input :quantity, label: false %>
+                <%= f.button :submit, "Update quantity" %>
+              <% end %>
+            </td>
             <td><%= link_to "Remove item", product_order_item_path(item.product, item), method: :delete, data: { confirm: "Are you sure?" } %></td>
           </tr>
         <% end %>
