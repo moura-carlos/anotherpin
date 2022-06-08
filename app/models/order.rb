@@ -8,6 +8,8 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
+  accepts_nested_attributes_for :order_items
+
   # method to move the items from the cart into the order
   def add_from_cart(cart)
     cart.order_items.each do |item|
