@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'active_link_to'
 
 gem 'simple_form', '~> 5.1'
+# required for the country field in the super_form_for
+gem 'country_select', '~> 7.0'
 
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'mini_magick', '~> 4.11'
@@ -39,7 +41,6 @@ gem 'fog-aws', '~> 3.14'
 
 gem 'activeadmin'
 gem 'devise'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

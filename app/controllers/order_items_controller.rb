@@ -12,6 +12,10 @@ class OrderItemsController < ApplicationController
   end
 
   def update
+    url = Rails.application.routes.recognize_path(request.referrer)
+    last_controller = url[:controller]
+    last_action = url[:action]
+
     @product = Product.find(params[:product_id])
 
     @order_item = OrderItem.find(params[:id])
@@ -19,8 +23,11 @@ class OrderItemsController < ApplicationController
     @order_item.update(form_params)
 
     flash[:success] = 'Thank you for updating your cart'
-
-    redirect_to product_path(@product)
+    if last_controller != 'cart' && last_action != 'show'
+      redirect_to product_path(@product)
+    else
+      redirect_to controller: last_controller, action: last_action
+    end
   end
 
   def destroy
