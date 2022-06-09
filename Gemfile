@@ -42,6 +42,9 @@ gem 'fog-aws', '~> 3.14'
 gem 'activeadmin'
 gem 'devise'
 
+# accepting payments into our application
+gem 'stripe'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
