@@ -9,5 +9,39 @@
   <%= f.input :address_2, label: "UNIT/APT" %>
   <%= f.input :city %>
   <%= f.input :postal_code %>
+
+  <div id="card-errors">
+    <% @order.errors[:stripe_token].each do |message| %>
+      <p class="error">
+        <%= message %>
+      </p>
+    <% end %>
+  </div>
+  <div id="card"></div>
+
   <%= f.button :submit, "Submit order" %>
 <% end %>
+
+<script>
+  var newOrderForm = document.querySelector("form.new_order");
+  var stripe = Stripe("<%=Rails.application.credentials[Rails.env.to_sym][:stripe_publishable_key]%>");
+  var elements = stripe.elements();
+
+  var card = elements.create("card")
+
+  card.mount('#card')
+
+  $(newOrderForm).on("submit", function (ev) {
+    ev.preventDefault()
+
+    stripe.createToken(card).then(function (result) {
+      if (result.error) {
+        $("#card-errors").html(result.error.message)
+      } else {
+        $(newOrderForm).append("<input type='hidden' name='order[stripe_token]' value="+ result.token.id + "/>")
+        $(newOrderForm).get(0).submit()
+      }
+    })
+
+  })
+</script>
