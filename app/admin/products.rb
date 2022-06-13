@@ -36,7 +36,7 @@ ActiveAdmin.register Product do
     f.inputs 'Product info' do
       f.input :title
       f.input :price
-      f.input :description
+      f.input :description, as: :quill_editor, input_html: { data: { options: { modules: { toolbar: [['bold', 'italic', 'underline'], ['link', 'blockquote'], [{list: 'ordered'}, {list: 'bullet'}], [{ size: [ 'small', false, 'large', 'huge' ] }]] }, placeholder: 'Type something...', theme: 'snow' } } }
       f.input :collection_date
     end
 
