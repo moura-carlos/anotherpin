@@ -57,4 +57,17 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp-relay.sendinblue.com',
+    port: 587,
+    domain: 'anotherpinco.com',
+    user_name: Rails.application.credentials[Rails.env.to_sym][:sendinblue_username],
+    password: Rails.application.credentials[Rails.env.to_sym][:sendinblue_password],
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    open_timeout: 5,
+    read_timeout: 5
+  }
 end
