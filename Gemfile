@@ -49,6 +49,9 @@ gem 'fog-aws', '~> 3.14'
 
 gem 'activeadmin'
 gem 'devise'
+# add rich text to active admin
+gem 'activeadmin_quill_editor'
+gem 'sassc'
 
 # accepting payments into our application
 gem 'stripe'
