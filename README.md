@@ -5,9 +5,9 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
+* [Admin dashboard](#admin-dashboard)
 * [Modeling](#modeling)
 * [Status](#status)
-* [Inspiration](#inspiration)
 * [Testing the deployed application](#testing-the-deployed-application)
 * [On production](#on-production)
 ***
