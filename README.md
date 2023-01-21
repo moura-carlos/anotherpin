@@ -172,7 +172,7 @@ If you want to be able to **store your image files using amazon AWS S3**:
 * This project is complete, but I am still planning to improve its front end.
 ***
 ## Testing the deployed application
-* Go to the website: [Anotherpinco test website](https://calm-ravine-91777.herokuapp.com/)
+* Go to the website: [Anotherpinco test website](https://anotherpin.osc-fr1.scalingo.io/)
 * To "purchase",  you can use the following test information:
     > Card number: 4242 4242 4242 4242
      MM/YY: 04/24
