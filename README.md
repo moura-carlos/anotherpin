@@ -2,6 +2,7 @@
 ---
 ## Table of contents
 * [General info](#general-info)
+* [Video - Testing the website](#video)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -16,6 +17,13 @@
 Nearly full-featured e-commerce web application built with *Ruby on Rails.*
 This app is the result of a  Ruby on Rails course found at [SuperHi](superhi.com).
 ***
+## [Video](https://www.loom.com/share/44efff9c9d224ed4a7b6a678884f4a98) - Testing the website
+
+
+https://user-images.githubusercontent.com/97359453/213884321-4def540a-b177-44ee-9a48-71241544ee13.mp4
+
+
+---
 ## Technologies
 The project is created with/makes use of:
 * Bundler version 2.3.5
