@@ -2,7 +2,7 @@
 ---
 ## Table of contents
 * [General info](#general-info)
-* [Video - Testing the website](#video)
+* [Video - Testing the website](#video---testing-the-website)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
